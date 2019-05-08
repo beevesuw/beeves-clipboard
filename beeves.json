@@ -1,0 +1,128 @@
+{
+    "beeves": {
+        "extension_name": "clipboard",
+        "hotword": "clipboard",
+        "functionMap" : {
+          "copy" : "copy",
+          "paste" : "paste"
+        }
+    },
+    "snips" : {
+      "entities": {
+        "keyword": {
+          "automatically_extensible": true,
+          "data": [],
+          "matching_strictness": 1.0,
+          "use_synonyms": false
+        }
+      },
+      "intents": {
+        "copy": {
+          "utterances": [
+            {
+              "data": [
+                {
+                  "text": "copy to"
+                },
+                {
+                  "entity": "keyword",
+                  "slot_name": "keyword",
+                  "text": "paragraph"
+                }
+              ]
+            },
+            {
+              "data": [
+                {
+                  "text": "copy as"
+                },
+                {
+                  "entity": "keyword",
+                  "slot_name": "keyword",
+                  "text": "paragraph"
+                }
+              ]
+            },
+            {
+              "data": [
+                {
+                  "text": "save to"
+                },
+                {
+                  "entity": "keyword",
+                  "slot_name": "keyword",
+                  "text": "paragraph"
+                }
+              ]
+            },
+            {
+              "data": [
+                {
+                  "text": "copy as"
+                },
+                {
+                  "entity": "keyword",
+                  "slot_name": "keyword",
+                  "text": "paragraph"
+                }
+              ]
+            }
+          ]
+        },
+        "paste": {
+          "utterances": [
+            {
+              "data": [
+                {
+                  "text": "paste from"
+                },
+                {
+                  "entity": "keyword",
+                  "slot_name": "keyword",
+                  "text": "paragraph"
+                }
+              ]
+            },
+            {
+              "data": [
+                {
+                  "text": "paste"
+                },
+                {
+                  "entity": "keyword",
+                  "slot_name": "keyword",
+                  "text": "paragraph"
+                }
+              ]
+            },
+            {
+              "data": [
+                {
+                  "text": "put"
+                },
+                {
+                  "entity": "keyword",
+                  "slot_name": "keyword",
+                  "text": "paragraph"
+                }
+              ]
+            },
+            {
+              "data": [
+                {
+                  "text": "put from"
+                },
+                {
+                  "entity": "keyword",
+                  "slot_name": "keyword",
+                  "text": "paragraph"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "language": "en"
+    }
+}
+
