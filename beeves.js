@@ -66,11 +66,12 @@ Beeves.init = function(){
     );
   });
   browser.runtime.onMessageExternal.addListener(this.messageHandler);
-  Beeves.newFunction('newTab', function(room, color){
-    var creating = browser.tabs.create({
-      url:"https://example.org"
-    });
-    console.log('creating new tab!');
+  Beeves.newFunction('copy', function(keyword){
+    copyHelper(keyword);
+  });
+  Beeves.newFunction('paste', async function(keyword){
+    let text =  await pasteHelper(keyword);
+    console.log(text);
   });
 }
 
