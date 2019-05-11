@@ -67,11 +67,18 @@ Beeves.init = function(){
   });
   browser.runtime.onMessageExternal.addListener(this.messageHandler);
   Beeves.newFunction('copy', function(keyword){
-    copyHelper(keyword);
+    console.log(`copy: ${keyword}`);
+    browser.tabs.query({active: true}, function(tabs){
+      console.log(tabs);
+      browser.tabs.sendMessage(tabs[0].id, {action: "copy", keyword: keyword}, function(response) {});  
+    });
   });
   Beeves.newFunction('paste', async function(keyword){
-    let text =  await pasteHelper(keyword);
-    console.log(text);
+    console.log(`paste: ${keyword}`);
+    browser.tabs.query({active: true}, function(tabs){
+      console.log(tabs);
+      browser.tabs.sendMessage(tabs[0].id, {action: "paste", keyword: keyword}, function(response) {});  
+    });
   });
 }
 

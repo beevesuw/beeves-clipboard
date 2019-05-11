@@ -2,7 +2,7 @@
   "description": "A BEEVES compatible webextension",
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/runtime-examples",
   "manifest_version": 2,
-  "name": "beeves_browserfunctions",
+  "name": "beeves_clipboard",
   "version": "1.0",
   "permissions": ["notifications", "http://localhost:5000/*", "*://postman-echo.com/*", "webRequest", "<all_urls>", "storage"],
   "background": {
@@ -10,11 +10,11 @@
   },
   "content_scripts": [{
     "matches": ["<all_urls>"],
-    "js": ["content-script.js"]
+    "js": ["content-script.js", "jquery.js"]
   }],
   "browser_specific_settings": {
     "gecko": {
-      "id": "tab@beeves.com"
+      "id": "clipboard@beeves.com"
     }
   }
 }

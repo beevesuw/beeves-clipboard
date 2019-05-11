@@ -1,21 +1,16 @@
-function copySelection() {
+async function copySelection() {
     var selectedText = window.getSelection().toString().trim();
-
     if (selectedText) {
-        updateClipboard('_', selectedText);
+        alert(selectedText);
     }
 }
 
-/*
-Add copySelection() as a listener to mouseup events.
-*/
-document.addEventListener("mouseup", copySelection);
-
-async function updateClipboard(keyword, text){
-    browser.storage.local.get('clipboard', function(clipboard){
-        clipboard = clipboard.clipboard || clipboard;
-        clipboard[keyword] = text;
-        browser.storage.local.set({clipboard}, function(){});
-    });
-    return Promise.resolve(true);
-}
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if(message.action == 'copy'){
+        alert(`copy: ${message.keyword}`);
+        copySelection();
+    }
+    else if(message.action == 'paste'){
+        alert(`paste: ${message.keyword}`);
+    }
+});
